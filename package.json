@@ -1,0 +1,25 @@
+{
+  "name": "kondate-api-spec",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "redoc-cli build openapi.yml -o dist/index.html",
+    "lint": "spectral lint openapi.yml",
+    "mock": "prism mock openapi.yml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsadamori/kondate-api-spec.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsadamori/kondate-api-spec/issues"
+  },
+  "homepage": "https://github.com/tsadamori/kondate-api-spec#readme",
+  "dependencies": {
+    "@stoplight/prism-cli": "^4.10.4",
+    "@stoplight/spectral-cli": "^6.5.1",
+    "redoc-cli": "^0.13.20"
+  }
+}
