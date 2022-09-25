@@ -1,0 +1,21 @@
+get:
+  operationId: get-users-userId
+  summary: ユーザ詳細
+  description: 指定したIDのユーザの詳細情報を取得する
+  tags:
+    - users
+  security:
+    - cookieAuth: []
+  parameters:
+    - $ref: ../../parameters/path/userId.yml
+  responses:
+    "200":
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/User.yml
+    "401":
+      $ref: ../../responses/unauthorized.yml
+    "404":
+      $ref: ../../responses/notFound.yml

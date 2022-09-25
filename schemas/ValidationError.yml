@@ -1,0 +1,15 @@
+type: object
+required:
+  - message
+  - errors
+properties:
+  message:
+    type: string
+  errors:
+    type: object
+    description: |
+      キーが要素名、値がエラーメッセージの配列となるようなobject
+    additionalProperties:
+      type: array
+      items:
+        type: string

@@ -1,0 +1,7 @@
+name: menuId
+in: path
+required: true
+description: menus.id
+schema:
+  type: integer
+  minimum: 1

@@ -1,0 +1,67 @@
+get:
+  operationId: get-menus-menuId
+  summary: メニュー詳細
+  description: 指定したIDのメニューの詳細情報を取得する
+  tags:
+    - menus
+  security:
+    - cookieAuth: []
+  parameters:
+    - $ref: ../../parameters/path/menuId.yml
+  responses:
+    "200":
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/Menu.yml
+    "401":
+      $ref: ../../responses/unauthorized.yml
+    "404":
+      $ref: ../../responses/notFound.yml
+put:
+  operationId: put-menu-menuId
+  summary: メニュー更新
+  description: 指定したIDのメニューを更新する
+  tags:
+    - menus
+  security:
+    - cookieAuth: []
+  requestBody:
+    required: false
+    content:
+      application/json:
+        schema:
+          $ref: ../../requests/menu/put.yml
+  parameters:
+    - $ref: ../../parameters/path/menuId.yml
+  responses:
+    "200":
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/Menu.yml
+    "401":
+      $ref: ../../responses/unauthorized.yml
+    "404":
+      $ref: ../../responses/notFound.yml
+    "422":
+      $ref: ../../responses/invalidRequest.yml
+delete:
+  operationId: delete-menu-menuId
+  summary: メニュー削除
+  description: 指定したIDのメニューを削除する
+  tags:
+    - menus
+  security:
+    - cookieAuth: []
+  parameters:
+    - $ref: ../../parameters/path/menuId.yml
+  responses:
+    "204":
+      description: Null Response
+    "401":
+      $ref: ../../responses/unauthorized.yml
+    "404":
+      $ref: ../../responses/notFound.yml

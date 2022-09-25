@@ -1,0 +1,24 @@
+type: object
+required:
+  - id
+  - name
+  - email
+  - profile
+  - imageUrl
+properties:
+  id:
+    type: integer
+    description: users.id
+    minimum: 1
+  name:
+    type: string
+    example: サンプルユーザ
+  email:
+    type: string
+    example: sample@example.com
+  profile:
+    type: string
+    example: サンプルプロフィール
+  imageUrl:
+    type: string
+    example: /storeage/sample.jpg

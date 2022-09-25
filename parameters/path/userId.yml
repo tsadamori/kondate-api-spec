@@ -1,0 +1,7 @@
+name: userId
+in: path
+required: true
+description: users.id
+schema:
+  type: integer
+  minimum: 1

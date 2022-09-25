@@ -1,0 +1,15 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: kondate-api-spec
+servers:
+  - url: https://kodate.work/api/v1
+paths:
+  /users:
+    $ref: ./paths/user/index.yml
+  /users/{userId}:
+    $ref: ./paths/user/userid.yml
+  /menus:
+    $ref: ./paths/menu/index.yml
+  /menus/{menuId}:
+    $ref: ./paths/menu/menuId.yml

@@ -1,0 +1,31 @@
+get:
+  operationId: get-users
+  summary: ユーザ一覧
+  description: ユーザの一覧を取得する
+  tags:
+    - users
+  security:
+    - cookieAuth: []
+  parameters:
+    - $ref: ../../parameters/query/limit.yml
+    - $ref: ../../parameters/query/offset.yml
+  responses:
+    "200":
+      description: Success
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                required:
+                  - users
+                properties:
+                  users:
+                    type: array
+                    items:
+                      $ref: ../../schemas/User.yml
+              - $ref: ../../schemas/Metadata.yml
+    "401":
+      $ref: ../../responses/unauthorized.yml
+    "404":
+      $ref: ../../responses/notFound.yml

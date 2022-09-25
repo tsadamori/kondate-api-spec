@@ -1,0 +1,56 @@
+get:
+  operationId: get-menus
+  summary: メニュー一覧
+  description: メニューの一覧を取得する
+  tags:
+    - menus
+  security:
+    - cookieAuth: []
+  parameters:
+    - $ref: ../../parameters/query/limit.yml
+    - $ref: ../../parameters/query/offset.yml
+  responses:
+    "200":
+      description: Success
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                required:
+                  - menus
+                properties:
+                  menus:
+                    type: array
+                    items:
+                      $ref: ../../schemas/Menu.yml
+              - $ref: ../../schemas/Metadata.yml
+    "401":
+      $ref: ../../responses/unauthorized.yml
+    "404":
+      $ref: ../../responses/notFound.yml
+post:
+  operationId: post-menus
+  summary: メニュー登録
+  description: メニューを登録する
+  tags:
+    - menus
+  security:
+    - cookieAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../requests/menu/post.yml
+  responses:
+    "201":
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/Menu.yml
+    "401":
+      $ref: ../../responses/unauthorized.yml
+    "422":
+      $ref: ../../responses/invalidRequest.yml

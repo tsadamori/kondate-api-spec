@@ -1,0 +1,38 @@
+type: object
+required:
+  - id
+  - name
+  - categories
+  - imageUrl
+  - relatedLink
+  - description
+properties:
+  id:
+    type: integer
+    description: menus.id
+    minimum: 1
+  name:
+    type: string
+    example: サンプルメニュー
+  categories:
+    type: array
+    items:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          example: サンプルカテゴリ
+  imageUrl:
+    type: string
+    nullable: true
+    example: /storage/sample.jpg
+  relatedLink:
+    type: string
+    nullable: true
+    example: https://example.com
+  description:
+    type: string
+    nullable: true
+    example: サンプルメニュー詳細

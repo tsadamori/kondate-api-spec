@@ -1,0 +1,32 @@
+type: object
+properties:
+  userId:
+    type: integer
+    minimum: 1
+  categoryIds:
+    type: array
+    items:
+      type: integer
+      minimum: 1
+  name:
+    type: string
+    example: サンプルメニュー
+  ingredients:
+    type: object
+    required:
+      - name
+    properties:
+      name:
+        type: string
+        example: サンプル材料
+  imageData:
+    type: string
+    format: byte
+    description: メニュー画像(base64)
+    example: U3dhZ2dlciByb2Nrcw==
+  relatedLink:
+    type: string
+    example: https://example.com
+  description:
+    type: string
+    example: サンプルメニュー詳細
