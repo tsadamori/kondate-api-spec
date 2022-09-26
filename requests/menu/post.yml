@@ -20,21 +20,27 @@ properties:
     type: string
     example: サンプルメニュー
   ingredients:
-    type: object
-    required:
-      - name
-    properties:
-      name:
-        type: string
-        example: サンプル材料
+    type: array
+    items:
+      type: object
+      minimum: 1
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          example: サンプル材料
   imageData:
     type: string
+    nullable: true
     format: byte
     description: メニュー画像(base64)
     example: U3dhZ2dlciByb2Nrcw==
   relatedLink:
     type: string
+    nullable: true
     example: https://example.com
   description:
     type: string
+    nullable: true
     example: サンプルメニュー詳細

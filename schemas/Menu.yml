@@ -3,6 +3,7 @@ required:
   - id
   - name
   - categories
+  - ingredients
   - imageUrl
   - relatedLink
   - description
@@ -18,12 +19,34 @@ properties:
     type: array
     items:
       type: object
+      minimum: 1
       required:
+        - id
         - name
       properties:
+        id:
+          type: intrget
+          description: categories.id
+          minimum: 1
         name:
           type: string
           example: サンプルカテゴリ
+  ingredients:
+    type: array
+    items:
+      type: object
+      minimum: 1
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+          description: ingredients.id
+          minimum: 1
+        name:
+          type: string
+          example: サンプル材料
   imageUrl:
     type: string
     nullable: true
