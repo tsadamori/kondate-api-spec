@@ -1,0 +1,31 @@
+get:
+  operationId: get-categories
+  summary: カテゴリ一覧
+  description: カテゴリの一覧を取得する
+  tags:
+    - categories
+  security:
+    - cookieAuth: []
+  parameters:
+    - $ref: ../../parameters/query/limit.yml
+    - $ref: ../../parameters/query/offset.yml
+  responses:
+    "200":
+      description: Success
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                required:
+                  - categories
+                properties:
+                  categories:
+                    type: array
+                    items:
+                      $ref: ../../schemas/Category.yml
+              - $ref: ../../schemas/Metadata.yml
+    "401":
+      $ref: ../../responses/unauthorized.yml
+    "404":
+      $ref: ../../responses/notFound.yml
