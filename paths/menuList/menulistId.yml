@@ -1,0 +1,65 @@
+get:
+  operationId: get-menuList-menuListId
+  summary: メニューリスト詳細
+  description: 指定したIDのメニューリストの詳細情報を取得する
+  tags:
+    - menuList
+  security:
+    - cookieAuth: []
+  parameters:
+    - $ref: ../../parameters/path/menuListId.yml
+  responses:
+    "200":
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/MenuList.yml
+    "401":
+      $ref: ../../responses/unauthorized.yml
+    "404":
+      $ref: ../../responses/notFound.yml
+put:
+  operationId: put-menuList-menuListId
+  summary: メニューリスト更新
+  description: 指定したIDのメニューリストを更新する
+  tags:
+    - menuList
+  security:
+    - cookieAuth: []
+  parameters:
+    - $ref: ../../parameters/path/menuListId.yml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../requests/menuList/put.yml
+  responses:
+    "200":
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/MenuList.yml
+    "401":
+      $ref: ../../responses/unauthorized.yml
+    "404":
+      $ref: ../../responses/notFound.yml
+delete:
+  operationId: delete-menuList-menuListId
+  summary: メニューリスト削除
+  description: 指定したIDのメニューリストを削除する
+  tags:
+    - menuList
+  security:
+    - cookieAuth: []
+  parameters:
+    - $ref: ../../parameters/path/menuListId.yml
+  responses:
+    "200":
+      description: Null Response
+    "401":
+      $ref: ../../responses/unauthorized.yml
+    "404":
+      $ref: ../../responses/notFound.yml

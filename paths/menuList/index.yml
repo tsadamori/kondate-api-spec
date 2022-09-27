@@ -1,0 +1,65 @@
+get:
+  operationId: get-menu-lists
+  summary: メニューリスト一覧
+  description: メニューリストの一覧を取得する
+  tags:
+    - menuList
+  security:
+    - cookieAuth: []
+  parameters:
+    - $ref: ../../parameters/query/limit.yml
+    - $ref: ../../parameters/query/offset.yml
+  responses:
+    "200":
+      description: Success
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                required:
+                  - menuLists
+                properties:
+                  menuLists:
+                    type: array
+                    items:
+                      $ref: ../../schemas/MenuList.yml
+              - $ref: ../../schemas/Metadata.yml
+    "401":
+      $ref: ../../responses/unauthorized.yml
+    "404":
+      $ref: ../../responses/notFound.yml
+post:
+  operationId: post-menuList
+  summary: メニューリスト登録
+  description: メニューリストを登録する
+  tags:
+    - menuList
+  security:
+    - cookieAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../requests/menuList/post.yml
+  responses:
+    "200":
+      description: Success
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                required:
+                  - menuLists
+                properties:
+                  menuLists:
+                    type: array
+                    items:
+                      $ref: ../../schemas/MenuList.yml
+              - $ref: ../../schemas/Metadata.yml
+    "401":
+      $ref: ../../responses/unauthorized.yml
+    "404":
+      $ref: ../../responses/notFound.yml

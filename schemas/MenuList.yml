@@ -1,0 +1,50 @@
+type: object
+required:
+  - id
+  - menus
+  - created_at
+  - updated_at
+properties:
+  id:
+    type: integer
+    description: menu_lists.id
+    minimum: 1
+  menus:
+    type: array
+    items:
+      type: object
+      required:
+        - id
+        - name
+        - ingredients
+      properties:
+        id:
+          type: integer
+          description: menus.id
+          minimum: 1
+        name:
+          type: string
+          example: サンプルメニュー
+        ingredients:
+          type: array
+          items:
+            required:
+              - id
+              - name
+              - quantity
+            properties:
+              id:
+                type: integer
+                description: ingredients.id
+                minimum: 1
+              name:
+                type: string
+                example: サンプル材料
+              quantity:
+                type: integer
+                description: 材料の数量
+                minimum: 1
+  created_at:
+    type: string
+  updated_at:
+    type: string

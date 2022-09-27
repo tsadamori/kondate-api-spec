@@ -25,7 +25,7 @@ properties:
         - name
       properties:
         id:
-          type: intrget
+          type: integer
           description: categories.id
           minimum: 1
         name:

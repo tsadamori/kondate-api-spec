@@ -13,3 +13,7 @@ paths:
     $ref: ./paths/menu/index.yml
   /menus/{menuId}:
     $ref: ./paths/menu/menuId.yml
+  /menuLists:
+    $ref: ./paths/menuList/index.yml
+  /menuLists/{menuListId}:
+    $ref: ./paths/menuList/menuListId.yml

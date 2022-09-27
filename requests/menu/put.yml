@@ -22,7 +22,7 @@ properties:
       properties:
         id:
           type: integer
-          descirption: ingredients.id
+          description: ingredients.id
           minimum: 1
         name:
           type: string
