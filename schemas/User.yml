@@ -21,4 +21,4 @@ properties:
     example: サンプルプロフィール
   imageUrl:
     type: string
-    example: /storeage/sample.jpg
+    example: /storage/sample.jpg
