@@ -19,6 +19,7 @@ properties:
       required:
         - id
         - name
+        - quantity
       properties:
         id:
           type: integer
@@ -27,6 +28,9 @@ properties:
         name:
           type: string
           example: サンプル材料
+        quantity:
+          type: integer
+          example: 1
   imageData:
     type: string
     nullable: true

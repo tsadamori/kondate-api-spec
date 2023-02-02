@@ -26,10 +26,14 @@ properties:
       minimum: 1
       required:
         - name
+        - quantity
       properties:
         name:
           type: string
           example: サンプル材料
+        quantity:
+          type: integer
+          example: 1
   imageData:
     type: string
     nullable: true
