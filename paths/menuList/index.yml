@@ -3,7 +3,7 @@ get:
   summary: メニューリスト一覧
   description: メニューリストの一覧を取得する
   tags:
-    - menuList
+    - menuLists
   security:
     - cookieAuth: []
   parameters:
@@ -30,11 +30,11 @@ get:
     "404":
       $ref: ../../responses/notFound.yml
 post:
-  operationId: post-menuList
+  operationId: post-menuLists
   summary: メニューリスト登録
   description: メニューリストを登録する
   tags:
-    - menuList
+    - menuLists
   security:
     - cookieAuth: []
   requestBody:

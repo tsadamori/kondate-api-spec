@@ -3,7 +3,7 @@ get:
   summary: メニューリスト詳細
   description: 指定したIDのメニューリストの詳細情報を取得する
   tags:
-    - menuList
+    - menuLists
   security:
     - cookieAuth: []
   parameters:
@@ -24,7 +24,7 @@ put:
   summary: メニューリスト更新
   description: 指定したIDのメニューリストを更新する
   tags:
-    - menuList
+    - menuLists
   security:
     - cookieAuth: []
   parameters:
@@ -51,13 +51,13 @@ delete:
   summary: メニューリスト削除
   description: 指定したIDのメニューリストを削除する
   tags:
-    - menuList
+    - menuLists
   security:
     - cookieAuth: []
   parameters:
     - $ref: ../../parameters/path/menuListId.yml
   responses:
-    "200":
+    "204":
       description: Null Response
     "401":
       $ref: ../../responses/unauthorized.yml
