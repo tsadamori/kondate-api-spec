@@ -29,3 +29,22 @@ get:
       $ref: ../../responses/unauthorized.yml
     "404":
       $ref: ../../responses/notFound.yml
+post:
+  operationId: post-users
+  summary: ユーザ登録
+  description: ユーザを登録する
+  tags:
+    - users
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../requests/user/post.yml
+  responses:
+    "200":
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/User.yml

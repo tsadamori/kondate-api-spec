@@ -1,0 +1,19 @@
+type: object
+required:
+  - name
+  - email
+  - password
+  - profile
+properties:
+  name:
+    type: string
+    example: サンプルユーザ
+  email:
+    type: string
+    example: sample@example.com
+  password:
+    type: string
+    example: samplepasssword
+  profile:
+    type: string
+    example: サンプルプロフィール

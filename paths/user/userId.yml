@@ -19,3 +19,47 @@ get:
       $ref: ../../responses/unauthorized.yml
     "404":
       $ref: ../../responses/notFound.yml
+put:
+  operationId: put-user-userId
+  summary: ユーザ更新
+  description: 指定したIDのユーザを更新する
+  tags:
+    - users
+  security:
+    - cookieAuth: []
+  parameters:
+    - $ref ../../parameters/path/userId.yml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../requests/user/put.yml
+  responses:
+    "200":
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/User.yml
+    "401":
+      $ref: ../../responses/unauthorized.yml
+    "404":
+      $ref: ../../responses/notFound.yml
+delete:
+  operationId: delete-user-userId
+  summary: ユーザ削除
+  description: 指定したIDのユーザを削除する
+  tags:
+    - users
+  security:
+    - cookieAuth: []
+  parameters:
+    - $ref: ../../parameters/path/userId.yml
+  responses:
+    "204":
+      description: Null Response
+    "401":
+      $ref: ../../responses/unauthorized.yml
+    "404":
+      $ref: ../../responses/notFound.yml

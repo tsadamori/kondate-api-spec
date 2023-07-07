@@ -1,0 +1,14 @@
+type: object
+properties:
+  name:
+    type: string
+    example: サンプルユーザ
+  email:
+    type: string
+    example: sample@example.com
+  password:
+    type: string
+    example: samplepassword
+  profile:
+    type: string
+    example: サンプルプロフィール
