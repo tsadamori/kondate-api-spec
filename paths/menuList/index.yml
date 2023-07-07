@@ -49,16 +49,7 @@ post:
       content:
         application/json:
           schema:
-            allOf:
-              - type: object
-                required:
-                  - menuLists
-                properties:
-                  menuLists:
-                    type: array
-                    items:
-                      $ref: ../../schemas/MenuList.yml
-              - $ref: ../../schemas/Metadata.yml
+            $ref: ../../schemas/MenuList.yml
     "401":
       $ref: ../../responses/unauthorized.yml
     "404":
